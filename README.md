@@ -1,4 +1,4 @@
-# DSA
+# MergingArrays
 About MergingArrays()
 In that functon if the length of arrays is same then it gets executed until the last second last elememt, but prints garbage value 
 in place of the last element(the biggest one)
