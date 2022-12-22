@@ -3,33 +3,30 @@
 
 void MergingArrays(int *A, int *B, int *p, int l1, int l2)
 {
-    int i=0, j=0, k=0, var;     //i is for A, j is for B, k is for SortedArray, var is for comparing
+    int i=0, j=0, k=0, var;       //i is for A, j is for B, k is for SortedArray, var is for comparing
     while (i<l1 && j<l2)
-    {   
-        if (i != l1-1 && j != l2-1)     //This will execute until no list have reached to its end.
-        {
-            var = (*(A+i) == *(B+j))?(-1):((*(A+i)>*(B+j))?(1):(0));
-            //var will have -1 if both nos are same
-            //1 if A[] is bigger.
-            //0 if B[] is bigger.
+    {
+        var = (*(A+i) == *(B+j))?(-1):((*(A+i)>*(B+j))?(1):(0));
+        //var will have -1 if both nos are same
+        //1 if A[] is bigger.
+        //0 if B[] is bigger.
 
-            if (var == 1)
-            {
-                *(p+k) = *(B+j);
-                k++; j++;
-            }
-            else if (var == 0)
-            {
-                *(p+k) = *(A+i);
-                k++; i++;
-            }
-            else
-            {
-                *(p+k) = *(A+i); k++;
-                *(p+k) = *(B+j);
-                printf("%d %d Check the values: \n", *(p+k), *(A+i));
-                k++; i++; j++;
-            }
+        if (var == 1)
+        {
+            *(p+k) = *(B+j);
+            k++; j++;
+        }
+        else if (var == 0)
+        {
+            *(p+k) = *(A+i);
+            k++; i++;
+        }
+        else
+        {
+            *(p+k) = *(A+i);
+            *(p+k+1) = *(B+j);
+            printf("%d %d Check the values: \n", *(p+k), *(A+i));
+            k++; i++; j++;
         }
     }
 }
